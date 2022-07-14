@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import React from 'react'
 import Layout from '../components/Layout';
-import { todos } from '../todos'
 
-export default function todo() {
+export default function todo({todos}) {
     console.log(todos)
   return (
     <Layout>
@@ -19,4 +18,12 @@ export default function todo() {
       </div>
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+    const res = await fetch("http://localhost:3000/api/todo");
+    const todos = await res.json()
+    return {
+        props: {todos}
+    }
 }
