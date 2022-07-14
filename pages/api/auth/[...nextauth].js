@@ -9,18 +9,18 @@ export default NextAuth({
         email: { label: "email", type: "email" },
       },
       async authorize(credentials) {
-       
         const user = { name: "Ivan", email: "test@gmail.com" };
 
         if (user.email === credentials.email) {
-         
           return user;
         } else {
-       return null
-
-         
+          return null;
         }
       },
     }),
   ],
+  theme: {
+    colorScheme: "light",
+    buttonText: "Выйти",
+  },
 });
