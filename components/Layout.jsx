@@ -18,7 +18,7 @@ export default function Layout({children}) {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/todo">
               <a>задачи</a>
             </Link>
           </li>
