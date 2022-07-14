@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react'
+import LoginBtn from './LoginBtn';
 
 export default function Layout({children}) {
   return (
@@ -24,7 +25,7 @@ export default function Layout({children}) {
           </li>
           <li>
             <Link href="/">
-              <a>войти</a>
+              <LoginBtn/>
             </Link>
           </li>
         </ul>
