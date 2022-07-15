@@ -8,17 +8,17 @@ export default function Todo({ todos }) {
   if (status === "unauthenticated") {
     return (
       <Layout>
-        <h1>Нет доступа</h1>
+        <h1 className="py-4">Нет доступа</h1>
       </Layout>
     );
   }
 
   return (
     <Layout>
-      <div>Список карточек</div>
-      <div>
+      <div className="py-4">Список карточек</div>
+      <div className="grid grid-cols-4 gap-4 my-4">
         {todos.map((item) => (
-          <div key={item.id}>
+          <div className="bg-green-200 px-4 py-4" key={item.id}>
             <Link href="/todo/[id]" as={`/todo/${item.id}`}>
               <a>{item.message}</a>
             </Link>

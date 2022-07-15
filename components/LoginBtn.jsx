@@ -5,15 +5,26 @@ export default function LoginBtn() {
   if (session) {
     return (
       <>
-        {session.user.name} <br />
-        <button onClick={() => signOut()}>Выйти</button>
+        <div className="">{session.user.name}</div>
+        <div className="">{session.user.email}</div>
+        <button
+          className="absolute right-0 bottom-50% bg-green-400 px-3 py-1"
+          onClick={() => signOut()}
+        >
+          Выйти
+        </button>
       </>
     );
   }
   return (
     <>
       <br />
-      <button onClick={() => signIn()}>Войти</button>
+      <button
+        className=" absolute right-0 bottom-50% bg-green-400 px-3 py-1"
+        onClick={() => signIn()}
+      >
+        Войти
+      </button>
     </>
   );
 }
